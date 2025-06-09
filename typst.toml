@@ -1,0 +1,26 @@
+[package]
+name = "tailcv"
+version = "0.0.1"
+entrypoint = "lib.typ"
+authors = ["Salah Eddine Ghamri <https://github.com/SalahEddineGhamri>"]
+license = "Apache-2.0"
+description = "a CV template I use powered by Typst"
+repository = "https://github.com/SalahEddineGhamri/tailcv"
+keywords = [
+    "cv",
+    "resume",
+    "curriculum-vitae",
+    "modular",
+    "multilingual",
+]
+categories = ["cv", "languages", "layout"]
+compiler = "0.13.0"
+exclude = [".gitignore"]
+
+[template]
+path = "template"
+entrypoint = "tailcv.typ"
+thumbnail = "thumbnail.png"
+
+[tool.utpm]
+namespace = "preview"
