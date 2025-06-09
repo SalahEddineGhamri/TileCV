@@ -1,4 +1,11 @@
-# TailCV
+<h1 align="center">
+  <img src="assets/main.png" alt="Main Image">
+  <br><br>
+  Tail CV
+</h1>
+
+<br>
+
 A template for my CV powered by Typst languages.
 For the inspiration, thanks to https://typst.app/universe/package/brilliant-cv/
 

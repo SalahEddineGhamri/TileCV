@@ -3,7 +3,7 @@
  */
 
 // list-in-grid
-// items as a list or bullet point of items 
+// items as a list or bullet point of items
 #let make-list-in-grid() = (content, list-or-items) => grid(
   columns: auto,
   rows: auto,
@@ -25,15 +25,15 @@
 // normal entry with date, title and details
 #let make-entry-with-date(config) = (date, entry, details, with-progress: false) => {
     let entry-details = { if with-progress == true {
-        grid(rows: auto, gutter: 0pt, ..details)
+        grid(rows: auto, gutter: config.timeline_entry_items_gutter, ..details)
     } else {
-        details
+        par(details, justify:true)
       }
     }
-    
+
     grid(
-        columns: (config.date_column_width, auto),
-    rows: auto, 
+    columns: (config.date_column_width, auto),
+    rows: auto,
     gutter: config.entry_gutter,
     grid.cell(
         rowspan: 2,
@@ -58,7 +58,7 @@
           [#rect(stroke: (left: gray),
               inset: 5pt,
               fill: none
-          )[#text(details, size: config.default_font_size - 0.3pt)]]
+          )[#par(text(details, size: config.default_font_size - 0.3pt), justify: true)]]
       )
   )
 )
@@ -66,8 +66,9 @@
 #let make-tailcv-block(config) = (title, content, highlight) => {
   let fill = if highlight { config.highlight_bg_color } else { white }
   grid(
+    gutter: 0pt,
     styled-rect([#upper[#title]], config.title_bg_color),
-      styled-rect(pad(top: config.block_gap, bottom: config.block_gap, [#content]), fill, height: auto)
+    styled-rect(pad(top: config.block_gap, bottom: config.block_gap, [#content]), fill, height: auto)
   )
 }
 
@@ -86,7 +87,7 @@
     // Page layout
     set text(font: config.default_font, weight: "regular", size: config.default_font_size)
     set align(left)
-    let paper_size = config.page_size 
+    let paper_size = config.page_size
     set page(
       paper: {paper_size},
       margin: {
@@ -103,7 +104,7 @@
         colspan:2,
         body
     )
-    
+
     // a grid cell that span 2 rows
     let two-raws-cell(body) = grid.cell(
         rowspan:2,
@@ -128,7 +129,7 @@
     //    two-column-cell(two-raws-cell(..sections.slice(4,)))
     //)
 
-    // TODO: enhance response 
+    // TODO: enhance response
     let tailcv_layout = {
         // Required sections (0 and 1)
         let required_sections = if sections.len() >= 2 {
@@ -142,8 +143,8 @@
         // Optional sections
         let section_2 = if sections.len() > 2 { two-column-cell(sections.at(2)) } else { [] }
         let section_3 = if sections.len() > 3 { two-raws-cell(sections.at(3)) } else { [] }
-        let remaining_sections = if sections.len() > 4 { 
-            two-column-cell(two-raws-cell(..sections.slice(4))) 
+        let remaining_sections = if sections.len() > 4 {
+            two-column-cell(two-raws-cell(..sections.slice(4)))
         } else { [] }
 
         grid(

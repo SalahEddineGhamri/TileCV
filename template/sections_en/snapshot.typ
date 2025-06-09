@@ -1,42 +1,38 @@
-// TODO: create offset for links
-// TODO: add icons for contact
+// TODO: give possibility to add picture
+// TODO: create special offset for contact links
+// TODO: add icons for contact information
 
 #import "../user-space.typ": * 
 
-#let the-name = ""
-#let role-content = "" 
+#let the-name = "Bruce Wayne"
+#let role-content = "Chief Vigilante Officer (CVO)\nStrategy & Night Operations" 
 
 #let profile-section-name = "profile"
 #let profile-content = {
-"" 
-""
-""
-""
-""
-"" 
+"Elite strategist and tactician with a dual identity in corporate leadership and urban protection. Proven expertise in stealth, intelligence, and advanced technological deployment. Adept at high-risk decision-making and crisis management. Known for innovation in surveillance, mobility systems, and psychological operations." 
 }
 
 #let contact-section-name = "contact information"
 #let contact-content = {list-in-grid(
-    ("",
-     "",
-     "")
+    (
+    "batman@wayneenterprises.com",
+    "+1-GOTHAM-NITE",
+    "www.thebatcave.ai",
+    )
 , "items")
-    text("")
 }
 
 #let languages-section-name = "languages"
 #let languages-content = list-in-grid((
-    "",
-    "",
-    "",
-    ""
+"English: native",
+"Latin (for riddles): native",
+"Morse Code: native",
+"Justice: native"
 ), "items")
 
 #let interests-section-name = "interesets"
 #let interests-content = list-in-grid(
-    ("Reading", "Voyage", "Music", "Sports"),
-        "list")
+    ("Reading", "Voyage", "Music", "Sports", "Crimefighting", "Brooding"), "list")
 
 // snapshot sections build
 #let name = snapshot-block(the-name, role-content, true)
@@ -58,7 +54,15 @@ set grid.cell(
 
 grid(
     columns: auto,
-    rows: (0.6fr, 2.45fr, 1.6fr, 1.5fr, 0.7fr), // user define
+    // you have full control over these spacing params depending on number of sections
+    // they define space given to each section
+    rows: (
+        0.8 * 1fr,
+        2.5 * 1fr,
+        1.3 * 1fr,
+        1.4 * 1fr,
+        1.0 * 1fr
+    ), 
     name,
     profile,
     contact,
@@ -66,5 +70,6 @@ grid(
     interests
 )
 }
+
 #content
 
