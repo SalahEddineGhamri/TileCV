@@ -63,7 +63,7 @@
   )
 )
 
-#let make-tailcv-block(config) = (title, content, highlight) => {
+#let make-tilecv-block(config) = (title, content, highlight) => {
   let fill = if highlight { config.highlight_bg_color } else { white }
   grid(
     gutter: 0pt,
@@ -82,7 +82,7 @@
     )
 }
 
-#let make-tailcv-layout(config) = (sections, doc,) => {
+#let make-tilecv-layout(config) = (sections, doc,) => {
 
     // Page layout
     set text(font: config.default_font, weight: "regular", size: config.default_font_size)
@@ -111,8 +111,8 @@
         body
     )
 
-    // definition of tailcv layout as grid
-    //let tailcv_layout = grid(
+    // definition of tilecv layout as grid
+    //let tilecv_layout = grid(
     //    columns: (1fr, 1fr, 1fr),
     //    rows: (1fr, auto, auto),
     //    gutter: 4pt,
@@ -130,7 +130,7 @@
     //)
 
     // TODO: enhance response
-    let tailcv_layout = {
+    let tilecv_layout = {
         // Required sections (0 and 1)
         let required_sections = if sections.len() >= 2 {
             (sections.at(0), two-column-cell(sections.at(1)))
@@ -164,6 +164,6 @@
         )
     }
 
-    [#tailcv_layout]
+    [#tilecv_layout]
     doc
 }

@@ -40,7 +40,7 @@
     }, "items")
 }
 
-#let content = tailcv-block("Skills", skills-content, false)
+#let content = tilecv-block("Skills", skills-content, false)
 
 #content
 

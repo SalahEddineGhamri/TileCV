@@ -23,7 +23,7 @@
     )
 }
 
-#let content = tailcv-block("Education and Qualifications",
+#let content = tilecv-block("Education and Qualifications",
     education-content,
     false)
 

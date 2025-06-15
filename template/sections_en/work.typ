@@ -30,6 +30,6 @@
     with-progress: false)
 }
 
-#let content = tailcv-block("work experience", work-content, false)
+#let content = tilecv-block("work experience", work-content, false)
 
 #content

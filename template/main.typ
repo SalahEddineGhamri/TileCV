@@ -14,6 +14,6 @@
     sections.push(include "./sections_" + config.lang + "/" + section + ".typ")
 }
 
-#show: tailcv-layout.with(
+#show: tilecv-layout.with(
   sections,
 )

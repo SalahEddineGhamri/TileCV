@@ -10,7 +10,7 @@
 ), "items")
 
 #let content = {
-    tailcv-block("Academic Projects", projects-content, false)
+    tilecv-block("Academic Projects", projects-content, false)
 }
 
 #content

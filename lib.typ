@@ -1,9 +1,9 @@
 /* main.typ
- * this is the main and entry-point of tailcv package
+ * this is the main and entry-point of tilecv package
  */
 
 /* Packages */
-#import "./tailcv.typ": *
+#import "./tilecv.typ": *
 #import "./settings/default-settings.typ": config as default-config
 
 // expose init as configure

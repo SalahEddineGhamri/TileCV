@@ -3,7 +3,7 @@
 * all function must be imported from here
 */
 // Imports
-#import "@preview/tailcv:0.0.1": *
+#import "@preview/tilecv:0.0.1": *
 
 // build settings
 // uncomment the config you want to override
@@ -25,10 +25,10 @@
 // override default-settings
 #let config = default-config + user-config
 
-// build tailcv functions
+// build tilecv functions
 #let list-in-grid = make-list-in-grid()
 #let entry-with-date = make-entry-with-date(config)
 #let timeline-item = make-timeline-item(config)
-#let tailcv-block = make-tailcv-block(config)
+#let tilecv-block = make-tilecv-block(config)
 #let snapshot-block = make-snapshot-block(config)
-#let tailcv-layout = make-tailcv-layout(config)
+#let tilecv-layout = make-tilecv-layout(config)

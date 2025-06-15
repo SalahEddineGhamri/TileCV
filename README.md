@@ -1,7 +1,7 @@
 <h1 align="center">
   <img src="assets/main.png" alt="Main Image">
   <br><br>
-  Tail CV
+  Tile CV
 </h1>
 
 <br>
@@ -21,8 +21,8 @@ use the cargo which will get you the latest release of typst.
 the current repo contains a folder "template" this is the template of your project.
 just copy the content and put it in your empty project folder.
 
-the rest of the repo is the tailcv package your can put in the following location and you are good to go.
-```<home>/.cache/typst/packages/preview/tailcv/<0.0.1>```
+the rest of the repo is the tilecv package your can put in the following location and you are good to go.
+```<home>/.cache/typst/packages/preview/tilecv/<0.0.1>```
 adapt the version to the package version.
 
 ## 3. watch main.typ file
@@ -38,4 +38,4 @@ automatically.
 - Any good CV needs a fine tuning. User settings can be found in the user-space.typ that helps fine tune the spaces and
 change the font among other settings.
 - language selection can be controlled via user-space.typ language config.
-- you select what to include as tails in the cv.
+- you select what to include as tiles in the cv.
